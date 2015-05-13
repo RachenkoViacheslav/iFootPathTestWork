@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13D65" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Entity" representedClassName="Entity" syncable="YES">
+        <attribute name="walkCounty" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="walkDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="walkDistrict" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="walkGrade" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="walkIcon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="walkID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="walkIllustration" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="walkLength" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="walkNumseg" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="walkPhoto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="walkPublished" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="walkRating" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="walkSegments" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="walkStartCoordLat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="walkStartCoordLong" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="walkTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="walkType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="walkVersion" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Entity" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>
