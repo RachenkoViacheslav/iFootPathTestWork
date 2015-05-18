@@ -64,11 +64,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="All Walks" id="2IA-Hz-If1">
-                        <barButtonItem key="leftBarButtonItem" title="save" id="YLy-m4-8hk">
-                            <connections>
-                                <action selector="makeRequestAndSaveToCoreData:" destination="SLq-6c-2Qh" id="uCD-f7-muv"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="ZEu-iU-Whc">
                             <connections>
                                 <action selector="updateData:" destination="SLq-6c-2Qh" id="MMB-Pb-aAK"/>
