@@ -256,10 +256,6 @@ static NSString *urlSite = @"http://www.ifootpath.com/API/get_walks.php";
     
 }
 
-- (IBAction)makeRequestAndSaveToCoreData:(id)sender {
-    [self makeRequest];
-}
-
 
 - (IBAction)updateData:(id)sender {
   
