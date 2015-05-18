@@ -149,7 +149,7 @@ static NSString *urlSite = @"http://www.ifootpath.com/API/get_walks.php";
         cell = [[VRWalksCustomCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-        cell.walksTitleLabel.text = [walkItemObject valueForKey:@"walkTitle"] ;
+    cell.walksTitleLabel.text = [walkItemObject valueForKey:@"walkTitle"] ;
     cell.ratingImage.image = [self imageForRating:[walkItemObject valueForKey:@"walkRating"]];
     cell.walksShortDetailLabel.text = [walkItemObject valueForKey:@"walkDescription"];
     
@@ -159,10 +159,12 @@ static NSString *urlSite = @"http://www.ifootpath.com/API/get_walks.php";
     
     NSURL *iconUrl = [NSURL URLWithString:fullImageURL];
     
-    
  
     [cell.walksIcon setImageWithURL:iconUrl placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
-     
+    
+    CALayer *layerCustom = [cell.walksIcon layer];
+    [layerCustom setMasksToBounds:YES];
+    [layerCustom setCornerRadius:10]; 
     
     return cell;
 }
@@ -237,9 +239,6 @@ static NSString *urlSite = @"http://www.ifootpath.com/API/get_walks.php";
 -(BOOL)detectFirstLauchApp {
     
         if ([[NSUserDefaults standardUserDefaults]boolForKey:@"FirstLaunch"]) {
-        
-        
-        self.tableViewOutlet.backgroundColor = [UIColor greenColor];
         return YES;
         
     }
@@ -248,7 +247,6 @@ static NSString *urlSite = @"http://www.ifootpath.com/API/get_walks.php";
         
         [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"FirstLaunch"];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        self.tableViewOutlet.backgroundColor = [UIColor yellowColor];
         
         return NO;
     }
