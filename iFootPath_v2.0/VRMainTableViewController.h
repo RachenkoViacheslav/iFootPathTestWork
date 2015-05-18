@@ -10,7 +10,6 @@
 
 @interface VRMainTableViewController : UITableViewController 
 - (IBAction)updateData:(id)sender;
-- (IBAction)makeRequestAndSaveToCoreData:(id)sender;
 -(void)makeRequest;
 -(void)clearTableViewAndDataSource;
 @end
