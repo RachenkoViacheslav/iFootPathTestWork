@@ -16,10 +16,6 @@
 
 
 
-
-
-
-
 @interface VRNetManager ()
 @property (strong, nonatomic)Reachability* networkReachability;
 @property (strong, nonatomic) AFHTTPRequestOperationManager* requestOperationManager;
@@ -55,7 +51,12 @@
 
 -(void)downloadAllImagesArray:(NSArray*)imageArray {
  
-    
+     /*
+    скачиваются все картинки которые есть в приложении и сохраняются в файловой системе устройства 
+    (папка downloads/)  для создания оффлайн версии, 
+    ведь если кешировать только те картинки которые пользователь видит на экране, 
+    то есть вероятность того, что все картинки не будут скачаны и оффлайн версия будет неполной
+  */
     
      NSArray* folderFileList = [[VRNetManager sharedManager]getListFileName];
     self.requestOperationManager.operationQueue.maxConcurrentOperationCount=10;
@@ -68,8 +69,6 @@
     for (int i=0; i<imageArray.count; i++) {
         
 
-        
-            
             
                         if (![folderFileList containsObject:imageArray[i]]) {
                 
@@ -94,8 +93,7 @@
 
 -(UIImage*)loadImageWithName:(NSString*)fileName {
  
-
-
+ //загрузить картинку из файл системы
         NSString *path;
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         path = [paths[0] stringByAppendingPathComponent:@"downloads/"];
@@ -103,12 +101,12 @@
         
        UIImage* image = [UIImage imageWithContentsOfFile:path];
     
-  
     
     return image;
 }
 
 -(NSArray*)getListFileName {
+    //получить список названий всех файлов (имена картинок)
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString* path = [paths[0] stringByAppendingPathComponent:@"downloads/"];
@@ -151,12 +149,7 @@
                                        [imageNamesArray addObject:walkObject.walkIllustration];
                                        [imageNamesArray addObject:walkObject.walkPhoto];
                                        
-                                       
-                            
-                       
-                           
-                                   
-                                   
+                  
                                    
                            [[VRCoreDataManager sharedInstance]saveDataToCD:walkObject];
                            
@@ -178,15 +171,12 @@
                        NSLog(@"error = %@", error );
                    }];
     
-
-    
-    
 }
 
 -(NetworkStatus)checkInternetConnection {
+     //проверка наличия интернет соединения
     
-    
-    self.networkReachability = [Reachability reachabilityForInternetConnection];
+        self.networkReachability = [Reachability reachabilityForInternetConnection];
     
     return [self.networkReachability currentReachabilityStatus];
 }
